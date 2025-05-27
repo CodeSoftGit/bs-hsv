@@ -30,12 +30,12 @@ from bs_hsv import HSVConfig, Color
 config = HSVConfig()
 
 # Add judgments with method chaining and various color formats
-config.add(300, "PERFECT", "#FF00FF", fade=True) \
-      .add(200, "EXCELLENT", [0, 1, 0, 1]) \
+config.add(115, "PERFECT", "#FF00FF", fade=True) \
+      .add(110, "EXCELLENT", [0, 1, 0, 1]) \
       .add(100, "GOOD", Color(r=1, g=0.5, b=0))
 
 # Add an image-based judgment
-config.add_image(400, "logo.png", max_width=40)
+config.add_image(0, "logo.png", max_width=40)
 
 # Save the configuration
 config.save("hsv_config.json")
@@ -45,7 +45,7 @@ loaded_config = HSVConfig.load("hsv_config.json")
 print(loaded_config)
 
 # Get judgment for a specific score
-score = 250
+score = 115
 judgment = config.get_judgment_for_score(score)
 if judgment:
     print(f"Score {score} gets judgment: {judgment.text} (color: {judgment.color})")
