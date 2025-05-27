@@ -4,7 +4,7 @@
 [![Python Version](https://img.shields.io/pypi/pyversions/bs-hsv.svg)](https://pypi.org/project/bs-hsv/)
 [![License](https://img.shields.io/pypi/l/bs-hsv.svg)](https://github.com/CodeSoftGit/bs-hsv/blob/main/LICENSE)
 
-**HSV** is a Pydantic-based Python module for creating, managing, and visualizing hit score judgments with beautiful, intuitive syntax. Perfect for rhythm games, scoring systems, and visualizations that require threshold-based text display.
+**bs-hsv** is a Pydantic-based Python module for creating, managing, and visualizing hit score judgments with beautiful, intuitive syntax. Perfect for rhythm games, scoring systems, and visualizations that require threshold-based text display.
 
 ## Features
 
@@ -18,13 +18,13 @@
 ## Installation
 
 ```bash
-pip install hsv
+pip install bs-hsv
 ```
 
 ## Quick Start
 
 ```python
-from bs-hsv import HSVConfig, Color
+from bs_hsv import HSVConfig, Color
 
 # Create a new configuration
 config = HSVConfig()
@@ -58,7 +58,7 @@ if judgment:
 The `Color` class represents RGBA colors with values between 0.0 and 1.0:
 
 ```python
-from bs-hsv import Color
+from bs_hsv import Color
 
 # Various ways to create colors
 white = Color.white()  # Predefined color
@@ -84,7 +84,7 @@ rgb_tuple = custom.to_rgb_tuple()    # (128, 179, 255)
 The `Judgment` class represents a hit score judgment with threshold, text, and styling:
 
 ```python
-from bs-hsv import Judgment, Color
+from bs_hsv import Judgment, Color
 
 # Create a judgment
 judgment = Judgment(
@@ -108,7 +108,7 @@ sorted_judgments = sorted(judgments, reverse=True)  # Highest threshold first
 The `HSVConfig` class manages a collection of judgments:
 
 ```python
-from bs-hsv import HSVConfig, Color
+from bs_hsv import HSVConfig, Color
 
 # Create a configuration
 config = HSVConfig()
@@ -140,7 +140,7 @@ config_copy = config.clone()
 The `TextArtGenerator` class provides utilities for generating text art:
 
 ```python
-from bs-hsv import TextArtGenerator
+from bs_hsv import TextArtGenerator
 
 # Create text art from an image
 text_art = TextArtGenerator.from_image("logo.png", max_width=40)
@@ -167,7 +167,7 @@ pattern = TextArtGenerator.create_pattern(
 The HSV module includes various utility functions:
 
 ```python
-from bs-hsv.utils import merge_configs, generate_color_scheme, color_interpolate
+from bs_hsv.utils import merge_configs, generate_color_scheme, color_interpolate
 
 # Merge configurations
 merged = merge_configs([config1, config2], strategy="unique")
@@ -185,7 +185,7 @@ mid_color = color_interpolate(Color.red(), Color.blue(), 0.5)
 ### Creating a Game Scoring System
 
 ```python
-from bs-hsv import HSVConfig, Color
+from bs_hsv import HSVConfig, Color
 
 # Create a scoring system for a rhythm game
 scoring = HSVConfig()
@@ -222,7 +222,7 @@ for score in [115, 112, 110, 100, 99]
 ### Using Image-Based Judgments
 
 ```python
-from bs-hsv import HSVConfig
+from bs_hsv import HSVConfig
 
 # Create a configuration with image-based text art
 image_config = HSVConfig()
@@ -238,8 +238,8 @@ image_config.save("image_judgments.json")
 ### Using Color Schemes
 
 ```python
-from bs-hsv import HSVConfig, Color
-from bs-hsv.utils import generate_color_scheme
+from bs_hsv import HSVConfig, Color
+from bs_hsv.utils import generate_color_scheme
 
 # Create a configuration with a color scheme
 config = HSVConfig()
